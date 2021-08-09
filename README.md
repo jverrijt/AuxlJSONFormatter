@@ -1,6 +1,6 @@
 # AuxlJSONFormatter
 
-JSON string formatter / pretty printer for swift. Wraps [jsmn](https://github.com/zserge/jsmn).: a minimalistic JSON parser in C.
+JSON string formatter / pretty printer for swift. Wraps [jsmn](https://github.com/zserge/jsmn): a minimalistic JSON parser in C.
 
 Can provide an alternative to Swift's `JSONSerialization.data` in cases where the order of the fields in the formatted output need to match the order of the input.
 
