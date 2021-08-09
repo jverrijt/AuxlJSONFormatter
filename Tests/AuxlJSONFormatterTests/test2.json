@@ -1,0 +1,176 @@
+{
+  "args": {}, 
+  "data": "[{\n    \"WHO\": \"Joe\",\n    \"WEEK\": [\n      {\n        \"NUMBER\": 3,\n        \"EXPENSE\": [\n          {\n            \"WHAT\": \"Beer\",\n            \"AMOUNT\": 18.00\n          },\n          {\n            \"WHAT\": \"Food\",\n            \"AMOUNT\": 12.00\n          },\n          {\n            \"WHAT\": \"Food\",\n            \"AMOUNT\": 19.00\n          },\n          {\n            \"WHAT\": \"Car\",\n            \"AMOUNT\": 20.00\n          }\n        ]\n      },\n      {\n        \"NUMBER\": 4,\n        \"EXPENSE\": [\n          {\n            \"WHAT\": \"Beer\",\n            \"AMOUNT\": 19.00\n          },\n          {\n            \"WHAT\": \"Beer\",\n            \"AMOUNT\": 16.00\n          },\n          {\n            \"WHAT\": \"Food\",\n            \"AMOUNT\": 17.00\n          },\n          {\n            \"WHAT\": \"Food\",\n            \"AMOUNT\": 17.00\n          },\n          {\n            \"WHAT\": \"Beer\",\n            \"AMOUNT\": 14.00\n          }\n        ]\n      },\n      {\n        \"NUMBER\": 5,\n        \"EXPENSE\": [\n          {\n            \"WHAT\": \"Beer\",\n            \"AMOUNT\": 14.00\n          },\n          {\n            \"WHAT\": \"Food\",\n            \"AMOUNT\": 12.00\n          }\n        ]\n      }\n    ]\n  },\n  {\n    \"WHO\": \"Beth\",\n    \"WEEK\": [\n      {\n        \"NUMBER\": 3,\n        \"EXPENSE\": [\n          {\n            \"WHAT\": \"Beer\",\n            \"AMOUNT\": 16.00\n          }\n        ]\n      },\n      {\n        \"NUMBER\": 4,\n        \"EXPENSE\": [\n          {\n            \"WHAT\": \"Food\",\n            \"AMOUNT\": 17.00\n          },\n          {\n            \"WHAT\": \"Beer\",\n            \"AMOUNT\": 15.00\n          }\n        ]\n      },\n      {\n        \"NUMBER\": 5,\n        \"EXPENSE\": [\n          {\n            \"WHAT\": \"Food\",\n            \"AMOUNT\": 12.00\n          },\n          {\n            \"WHAT\": \"Beer\",\n            \"AMOUNT\": 20.00\n          }\n        ]\n      }\n    ]\n  },\n  {\n    \"WHO\": \"Janet\",\n    \"WEEK\": [\n      {\n        \"NUMBER\": 3,\n        \"EXPENSE\": [\n          {\n            \"WHAT\": \"Car\",\n            \"AMOUNT\": 19.00\n          },\n          {\n            \"WHAT\": \"Food\",\n            \"AMOUNT\": 18.00\n          },\n          {\n            \"WHAT\": \"Beer\",\n            \"AMOUNT\": 18.00\n          }\n        ]\n      },\n      {\n        \"NUMBER\": 4,\n        \"EXPENSE\": [\n          {\n            \"WHAT\": \"Car\",\n            \"AMOUNT\": 17.00\n          }\n        ]\n      },\n      {\n        \"NUMBER\": 5,\n        \"EXPENSE\": [\n          {\n            \"WHAT\": \"Beer\",\n            \"AMOUNT\": 14.00\n          },\n          {\n            \"WHAT\": \"Car\",\n            \"AMOUNT\": 12.00\n          },\n          {\n            \"WHAT\": \"Beer\",\n            \"AMOUNT\": 19.00\n          },\n          {\n            \"WHAT\": \"Food\",\n            \"AMOUNT\": 12.00\n          }\n        ]\n      }\n    ]\n  }\n]", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "deflate, gzip, br", 
+    "Content-Length": "2692", 
+    "Content-Type": "application/json; charset=utf-8", 
+    "Host": "httpbin.org", 
+    "User-Agent": "Auxl/1.1.1", 
+    "X-Amzn-Trace-Id": "Root=1-61113f4c-487315d4653b49cc7897fa1a"
+  }, 
+  "json": [
+    {
+      "WEEK": [
+        {
+          "EXPENSE": [
+            {
+              "AMOUNT": 18.0, 
+              "WHAT": "Beer"
+            }, 
+            {
+              "AMOUNT": 12.0, 
+              "WHAT": "Food"
+            }, 
+            {
+              "AMOUNT": 19.0, 
+              "WHAT": "Food"
+            }, 
+            {
+              "AMOUNT": 20.0, 
+              "WHAT": "Car"
+            }
+          ], 
+          "NUMBER": 3
+        }, 
+        {
+          "EXPENSE": [
+            {
+              "AMOUNT": 19.0, 
+              "WHAT": "Beer"
+            }, 
+            {
+              "AMOUNT": 16.0, 
+              "WHAT": "Beer"
+            }, 
+            {
+              "AMOUNT": 17.0, 
+              "WHAT": "Food"
+            }, 
+            {
+              "AMOUNT": 17.0, 
+              "WHAT": "Food"
+            }, 
+            {
+              "AMOUNT": 14.0, 
+              "WHAT": "Beer"
+            }
+          ], 
+          "NUMBER": 4
+        }, 
+        {
+          "EXPENSE": [
+            {
+              "AMOUNT": 14.0, 
+              "WHAT": "Beer"
+            }, 
+            {
+              "AMOUNT": 12.0, 
+              "WHAT": "Food"
+            }
+          ], 
+          "NUMBER": 5
+        }
+      ], 
+      "WHO": "Joe"
+    }, 
+    {
+      "WEEK": [
+        {
+          "EXPENSE": [
+            {
+              "AMOUNT": 16.0, 
+              "WHAT": "Beer"
+            }
+          ], 
+          "NUMBER": 3
+        }, 
+        {
+          "EXPENSE": [
+            {
+              "AMOUNT": 17.0, 
+              "WHAT": "Food"
+            }, 
+            {
+              "AMOUNT": 15.0, 
+              "WHAT": "Beer"
+            }
+          ], 
+          "NUMBER": 4
+        }, 
+        {
+          "EXPENSE": [
+            {
+              "AMOUNT": 12.0, 
+              "WHAT": "Food"
+            }, 
+            {
+              "AMOUNT": 20.0, 
+              "WHAT": "Beer"
+            }
+          ], 
+          "NUMBER": 5
+        }
+      ], 
+      "WHO": "Beth"
+    }, 
+    {
+      "WEEK": [
+        {
+          "EXPENSE": [
+            {
+              "AMOUNT": 19.0, 
+              "WHAT": "Car"
+            }, 
+            {
+              "AMOUNT": 18.0, 
+              "WHAT": "Food"
+            }, 
+            {
+              "AMOUNT": 18.0, 
+              "WHAT": "Beer"
+            }
+          ], 
+          "NUMBER": 3
+        }, 
+        {
+          "EXPENSE": [
+            {
+              "AMOUNT": 17.0, 
+              "WHAT": "Car"
+            }
+          ], 
+          "NUMBER": 4
+        }, 
+        {
+          "EXPENSE": [
+            {
+              "AMOUNT": 14.0, 
+              "WHAT": "Beer"
+            }, 
+            {
+              "AMOUNT": 12.0, 
+              "WHAT": "Car"
+            }, 
+            {
+              "AMOUNT": 19.0, 
+              "WHAT": "Beer"
+            }, 
+            {
+              "AMOUNT": 12.0, 
+              "WHAT": "Food"
+            }
+          ], 
+          "NUMBER": 5
+        }
+      ], 
+      "WHO": "Janet"
+    }
+  ], 
+  "method": "POST", 
+  "origin": "83.219.73.124", 
+  "url": "http://httpbin.org/anything"
+}

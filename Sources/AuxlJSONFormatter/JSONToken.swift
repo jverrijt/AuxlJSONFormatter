@@ -74,17 +74,26 @@ public struct JSONToken {
                     buffer += self.indent(indent, options)
                 }
                 
-                buffer += "{\n"
-                buffer += field.dump(source, options, indent + 1)
-                buffer += "\n\(self.indent(indent, options))}"
+                if field.fields.count > 0 {
+                    buffer += "{\n"
+                    buffer += field.dump(source, options, indent + 1)
+                    buffer += "\n\(self.indent(indent, options))}"
+                } else {
+                    buffer += "{ }"
+                }
                 
                 if index != fields.count - 1 {
                    buffer += ",\n"
                }
             } else if field.type == .array {
-                buffer += "[\n"
-                buffer += field.dump(source, options, indent + 1, field)
-                buffer += "\n\(self.indent(indent, options))]"
+                
+                if field.fields.count > 0 {
+                    buffer += "[\n"
+                    buffer += field.dump(source, options, indent + 1, field)
+                    buffer += "\n\(self.indent(indent, options))]"
+                } else {
+                    buffer += "[ ]"
+                }
             }
             
             index += 1

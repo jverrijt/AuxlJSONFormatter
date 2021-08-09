@@ -28,7 +28,8 @@ let package = Package(
             dependencies: ["AuxlJSONFormatter"],
             exclude: ["jsmn"],
             resources: [
-                .process("test.json")
+                .process("test.json"),
+                .process("test2.json")
             ]
             
         ),

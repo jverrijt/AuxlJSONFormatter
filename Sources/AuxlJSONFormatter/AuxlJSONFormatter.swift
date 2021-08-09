@@ -9,7 +9,6 @@ import Foundation
 
 import jsmn
 
-
 public struct JSONFormatterOptions {
     
     public init(useTabs: Bool = false, spaceWidth: Int = 4) {

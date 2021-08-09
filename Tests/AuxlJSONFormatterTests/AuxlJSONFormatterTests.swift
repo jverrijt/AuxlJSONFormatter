@@ -28,7 +28,11 @@ class AuxlJSONFormatterTests: XCTestCase {
                 "X": "Y",
                 "arr": [
                     1, 2, 3
-                ]
+                ],
+                "obj": {
+                    
+            
+                }
             }
             """
         
@@ -137,7 +141,7 @@ class AuxlJSONFormatterTests: XCTestCase {
      Test an example with various types
      */
     func testGeneratedJson() throws {
-        let jsonUrl = Bundle.module.url(forResource: "test", withExtension: "json")
+        let jsonUrl = Bundle.module.url(forResource: "test2", withExtension: "json")
         let json = try String(contentsOf: jsonUrl!)
         
         let output = try AuxlJSONFormatter.format(source: json)
