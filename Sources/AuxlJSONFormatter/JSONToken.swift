@@ -79,7 +79,7 @@ public struct JSONToken {
                     buffer += field.dump(source, options, indent + 1)
                     buffer += "\n\(self.indent(indent, options))}"
                 } else {
-                    buffer += "{ }"
+                    buffer += "{}"
                 }
                 
                 if index != fields.count - 1 {
@@ -92,7 +92,7 @@ public struct JSONToken {
                     buffer += field.dump(source, options, indent + 1, field)
                     buffer += "\n\(self.indent(indent, options))]"
                 } else {
-                    buffer += "[ ]"
+                    buffer += "[]"
                 }
             }
             
