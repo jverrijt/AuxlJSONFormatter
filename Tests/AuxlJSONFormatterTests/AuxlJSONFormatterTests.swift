@@ -133,15 +133,24 @@ class AuxlJSONFormatterTests: XCTestCase {
             }
             """
         
+        let json2 = """
+            {
+                "test": "test",
+                "test": "test2
+                "arr": []
+            }
+            
+            """
+        
         XCTAssertFalse(jsonIsValid(json: json))
-        XCTAssertThrowsError(try AuxlJSONFormatter.format(source: json))
+        XCTAssertThrowsError(try AuxlJSONFormatter.format(source: json2))
     }
     
     /**
      Test an example with various types
      */
     func testGeneratedJson() throws {
-        let jsonUrl = Bundle.module.url(forResource: "test2", withExtension: "json")
+        let jsonUrl = Bundle.module.url(forResource: "test", withExtension: "json")
         let json = try String(contentsOf: jsonUrl!)
         
         let output = try AuxlJSONFormatter.format(source: json)
@@ -150,5 +159,26 @@ class AuxlJSONFormatterTests: XCTestCase {
         XCTAssertTrue(jsonIsValid(json: output))
         
         print("\(output)")
+    }
+    
+    
+    
+    func testFormatStrict() {
+        
+        // Should fail but doesn't
+        let json = """
+            {
+                "fefe": "fefefe",
+                "xxxx": "yyyy"
+                "should": "fail"
+            }
+        """
+        
+        
+        if let format = try? AuxlJSONFormatter.format(source: json) {
+            print(format)
+            XCTFail("This JSON should have failed")
+        }
+        
     }
 }

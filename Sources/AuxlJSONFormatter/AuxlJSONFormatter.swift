@@ -73,10 +73,17 @@ open class AuxlJSONFormatter {
         
         var root = JSONToken(0, string.utf8.count, .root)
         
-        let _ = parse(tokens, Int(tc), &root)
+        do {
+            defer {
+                tokens.deallocate()
+            }
+            
+            let _ = try parse(tokens, Int(tc), &root)
         
-        tokens.deallocate()
-
+        } catch {
+            throw error
+        }
+        
         return root
     }
     
@@ -85,7 +92,7 @@ open class AuxlJSONFormatter {
      */
     private func parse(_ buffer: UnsafeMutablePointer<jsmntok_t>,
                        _ count: Int,
-                       _ container: inout JSONToken) -> Int {
+                       _ container: inout JSONToken) throws -> Int {
         
         if count == 0 {
             return 0
@@ -109,11 +116,18 @@ open class AuxlJSONFormatter {
                 let keyPtr = buffer + 1 + j
                 var keyContainer = JSONToken(keyPtr.pointee.start, keyPtr.pointee.end, .key)
                 
+                if keyPtr.pointee.size > 1 {
+                    // Illegal, a key can't have multiple values
+                    throw JSONFormatterError.InvalidJSON(
+                        errorLocation:
+                            NSMakeRange(Int(keyPtr.pointee.start), Int(keyPtr.pointee.end) - Int(keyPtr.pointee.start)))
+                }
+                
                 j += 1
                 
                 if keyPtr.pointee.size > 0 {
                     let np = buffer + 1 + j
-                    j += parse(np, count - j, &keyContainer)
+                    j += try parse(np, count - j, &keyContainer)
                 }
                 
                 object.fields.append(keyContainer)
@@ -131,7 +145,7 @@ open class AuxlJSONFormatter {
             
             for _ in 0..<token.size {
                 let np = buffer + 1 + j
-                j += parse(np, count - 1, &array)
+                j += try parse(np, count - 1, &array)
             }
             
             container.fields.append(array)
