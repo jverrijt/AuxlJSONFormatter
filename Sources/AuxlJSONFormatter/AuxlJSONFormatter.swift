@@ -20,7 +20,7 @@ public struct JSONFormatterOptions {
     var spaceWidth: Int = 4
 }
 
-enum JSONFormatterError: Error {
+public enum JSONFormatterError: Error {
     case InvalidJSON(errorLocation: NSRange)
     case OutOfMemory
 }
